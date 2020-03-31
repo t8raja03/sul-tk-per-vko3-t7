@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+while [[ true ]]; do
+
+    RND=$(head -1 /dev/ttyACM0)
+
+    echo -e "<?php\
+	    echo '<!DOCTYPE html>\
+	    <h1>$RND</h1>'\
+	    ?>"\
+	    > /var/www/html/rpi-rnd/index.php 
+
+    sleep 3    
+
+done
